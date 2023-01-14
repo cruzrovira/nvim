@@ -1,0 +1,5 @@
+{
+  "javascript.suggest.autoImports": true,
+  "javascript.importModuleSpecifier": "relative"
+}
+
