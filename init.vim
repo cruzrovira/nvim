@@ -1,6 +1,6 @@
 let mapleader=" "
 
-"configuracion de editor "
+"CONFIGURACION DE EDITOR"
 syntax on
 set encoding=utf-8
 set number 
@@ -24,7 +24,8 @@ set nowrap
 set termguicolors 
 
 
-call plug#begin('C:\Users\usuario\AppData\Local\nvim\plugged')
+call plug#begin('C:\Users\cruzr\AppData\Local\nvim\plugged')
+
 "TEMA"
 Plug 'https://github.com/joshdick/onedark.vim'
 Plug 'https://github.com/itchyny/lightline.vim' 
@@ -36,7 +37,6 @@ Plug 'christoomey/vim-tmux-navigator'
 "ICONOS DE NAVEGADOR"
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
 
 "LINEA VERTICAL ENTRE SANGUIAS"
 Plug 'Yggdroot/indentLine'
@@ -90,6 +90,7 @@ nnoremap <Leader>q :q!<CR>
 
 "BUSCAR"
 nmap <Leader>s <Plug>(easymotion-s2)
+
 "COMENTARIOS"
 nnoremap <Leader>/ :Commentary<CR>
 
@@ -98,11 +99,9 @@ nnoremap <C-Right> :bnext<CR>
 nnoremap <C-Left> :bprevious<CR>
 nnoremap <Leader>x :bdelete<CR>
 
-"desplazamiento en el codigo "
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+
+"AUTO COMPLETE CON COC AL PRECIONAR CONTROL ESPACIO "
+inoremap <silent><expr> <c-space> coc#refresh()
 
 "---------------------CONFIGURACION DE PLUGINS---------------------"
 "AIRLINE"
@@ -120,7 +119,6 @@ let g:lightline = {
 
 colorscheme onedark
 " highlight Normal ctermbg=NONE
-
 
 "EMMET"
  let g:user_emmet_settings = {
@@ -140,7 +138,6 @@ let NERDTreeDirArrows=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeMapOpenInTab='\t'
 
-
 "PRETTIER"
 "let g:prettier#autoformat = 1
 "let g:prettier#autoformat_require_pragma = 0
@@ -149,40 +146,31 @@ let NERDTreeMapOpenInTab='\t'
 let g:ale_linters = {'javascript': ['eslint', 'prettier'] , 'javascriptreact': ['prettier', 'eslint']}
 let g:ale_fixers = {'*': ['prettier']}
 
-
-
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 
 let g:ale_fix_on_save = 1
-" " "let g:ale_disable_lsp = 1
+"let g:ale_disable_lsp = 1
 
 let g:ale_echo_msg_error_str = '%s'
 let g:ale_echo_msg_format =  "Error: %s" | echohl None'
 "let g:ale_echo_msg_warning_str = "Warning: %s" | echohl None'
 
 let g:ale_javascript_prettier_options = '--monorepo'
+
 " -------------------COC CONFIGURACION---------------------------------------"
 set hidden
 set shortmess+=c
 
-" Some servers have issues with backup files, see #649
+
 set nobackup
 set nowritebackup
 
-" Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
-" delays and poor user experience
+
 set updatetime=300
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved
 set signcolumn=yes
 
-" Use tab for trigger completion with characters ahead and navigate
-" NOTE: There's always complete item selected by default, you may want to enable
-" no select by `"suggest.noselect": true` in your configuration file
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
