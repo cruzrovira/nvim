@@ -1,5 +1,12 @@
 {
-  "javascript.suggest.autoImports": true,
-  "javascript.importModuleSpecifier": "relative"
-}
+  "diagnostic.messageTarget": "float",
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.virtualTextPrefix": "<-",
+  "diagnostic.checkCurrentLine": true,
 
+  "javascript.suggest.autoImports": true,
+  "javascript.importModuleSpecifier": "relative",
+  "typescript.suggest.autoImports": true,
+  "typescript.importModuleSpecifier": "relative"
+}
