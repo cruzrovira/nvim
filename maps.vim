@@ -12,8 +12,8 @@ nmap <Leader>s <Plug>(easymotion-s2)
 nnoremap <Leader>/ :Commentary<CR>
 
 " DESPLAZAMIENTO DE BUFFER airline"
-nnoremap <C-Right> :bnext<CR>
-nnoremap <C-Left> :bprevious<CR>
+nnoremap <A-Right> :bnext<CR>
+nnoremap <A-Left> :bprevious<CR>
 nnoremap <Leader>x :bdelete<CR>
 
 "MOVER UNA LINEA "
@@ -25,8 +25,8 @@ noremap <C-Down> yyp
 noremap <C-Up> yyp
 
 "TERMINAL "
-noremap <leader>tv :botright vnew <Bar> :terminal<cr>
-noremap <leader>th :botright new <Bar> :terminal<cr>
+noremap <leader>tv :botright vnew <Bar> :terminal bash<cr>
+noremap <leader>th :botright new <Bar> :terminal bash<cr>
 
 "AUTO COMPLETE CON COC AL PRECIONAR CONTROL ESPACIO "
 inoremap <silent><expr> <c-space> coc#refresh()
