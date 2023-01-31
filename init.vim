@@ -57,22 +57,28 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 
-"AUTO COMPLETADO "
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"RESALTADO DE LENGUAJE"
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-"SOPORTE PARA LEGUAJE"
-Plug 'sheerun/vim-polyglot'
+"AUTO COMPLETADO"
+" LSP Support
+Plug 'neovim/nvim-lspconfig'             " Required
+Plug 'williamboman/mason.nvim'           " Optional
+Plug 'williamboman/mason-lspconfig.nvim' " Optional
 
-"RESALTADO PARA LENGUAJES "
-"Plug 'pangloss/vim-javascript'
-"Plug 'elzr/vim-json'
-"Plug 'maxmellon/vim-jsx-pretty'
-"Plug 'pothree/html5.vim'
-"Plug 'HerringtonDarkholme/yats.vim'
+" Autocompletion Engine
+Plug 'hrsh7th/nvim-cmp'         " Required
+Plug 'hrsh7th/cmp-nvim-lsp'     " Required
+Plug 'hrsh7th/cmp-buffer'       " Optional
+Plug 'hrsh7th/cmp-path'         " Optional
+Plug 'saadparwaiz1/cmp_luasnip' " Optional
+Plug 'hrsh7th/cmp-nvim-lua'     " Optional
 
-"FORMATEADOR PRETTIER"
-"Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+"  Snippets
+Plug 'L3MON4D3/LuaSnip'             " Required
+Plug 'rafamadriz/friendly-snippets' " Optional
 
+Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v1.x'}
 "LINTER"
 Plug 'dense-analysis/ale'
 

@@ -29,4 +29,4 @@ noremap <leader>tv :botright vnew <Bar> :terminal bash<cr>
 noremap <leader>th :botright new <Bar> :terminal bash<cr>
 
 "AUTO COMPLETE CON COC AL PRECIONAR CONTROL ESPACIO "
-inoremap <silent><expr> <c-space> coc#refresh()
+" inoremap <silent><expr> <c-space> coc#refresh()
